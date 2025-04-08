@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Cat VideoGame Registry</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('bg.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.5s;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #ff4500;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 50px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background: linear-gradient(45deg, #ff4500, #ffcc00, #ff4500);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+        }
+
+        /* Page Containers */
+        .container, .contact-page, .movies-page, .downloads-page {
+            display: none;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s ease-in-out;
+        }
+        .active {
+            display: block;
+            opacity: 1;
+            animation: fadeInPage 1s ease-in-out;
+        }
+
+        /* Movie Posters */
+        .movie-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .movie-list a img {
+            width: 220px;
+            height: 320px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .movie-list a img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Screening Times */
+        .screening-times {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Contact Us Section */
+        .contact-page a {
+            color: #ff4500;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-page a:hover {
+            text-decoration: underline;
+        }
+
+        /* Discord Button */
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <script>
+        function showPage(page) {
+            const pages = document.querySelectorAll('.container, .contact-page, .movies-page, .downloads-page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.querySelector('.' + page).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="javascript:void(0);" onclick="showPage('container')">Home</a>
+        <a href="javascript:void(0);" onclick="showPage('movies-page')">Movies</a>
+        <a href="javascript:void(0);" onclick="showPage('downloads-page')">Downloads</a>
+        <a href="javascript:void(0);" onclick="showPage('contact-page')">Contact Us</a>
+    </nav>
+
+    <!-- Home Page -->
+    <div class="container active">
+        <h1>Welcome to Burger Cat VideoGame Registry</h1>
+        <img src="cat.jpg" alt="Burger Cat" width="200" style="border-radius: 10px; margin-top: 10px;">
+        <p>Your one-stop destination for movie screenings and game downloads!</p>
+        <a href="https://discord.gg/Hk7UXYADb9" class="button">Join Discord</a>
+    </div>
+
+    <!-- Movies Page -->
+    <div class="movies-page">
+        <h1>Featured Movies</h1>
+        <p>Click on a movie poster to visit its Rotten Tomatoes page.</p>
+        <div class="movie-list">
+            <div>
+                <a href="https://www.rottentomatoes.com/m/borat" target="_blank"><img src="Borat.jpg" alt="Borat"></a>
+                <div class="screening-times">
+                    Screening Times: <br>
+                    30.04.25 <br>
+                    02.05.25 <br>
+                    05.05.25
+                </div>
+            </div>
+            <div>
+                <a href="https://www.rottentomatoes.com/m/old_dads" target="_blank"><img src="ems.png" alt="Old Dads"></a>
+                <div class="screening-times">
+                    Screening Times: <br>
+                    30.04.25 <br>
+                    02.05.25 <br>
+                    05.05.25
+                </div>
+            </div>
+            <div>
+                <a href="https://www.rottentomatoes.com/m/over_the_hedge" target="_blank"><img src="Ovh.jpg" alt="Over the Hedge"></a>
+                <div class="screening-times">
+                    Screening Times: <br>
+                    30.04.25 <br>
+                    02.05.25 <br>
+                    05.05.25
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Downloads Page -->
+    <div class="downloads-page">
+        <h1>Game Downloads</h1>
+        <div class="movie-list">
+            <div>
+                <a href="readyornotBMT.torrent"><img src="ron.png" alt="Ready or Not"></a>
+                <p><a href="readyornotBMT.torrent">Download Ready or Not</a></p>
+            </div>
+            <div>
+                <a href="tlauncherBMT.torrent"><img src="mc.png" alt="TLauncher"></a>
+                <p><a href="tlauncherBMT.torrent">Download TLauncher</a></p>
+            </div>
+            <div>
+                <a href="inzoiBMT.torrent"><img src="inzo.png" alt="Inzo"></a>
+                <p><a href="inzoiBMT.torrent">Download Inzo</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Page -->
+    <div class="contact-page">
+        <h1>Contact Us</h1>
+        <p>Email: <a href="mailto:vmie351@gmail.com">vmie351@gmail.com</a></p>
+        <p>Follow us on:</p>
+        <a href="https://www.youtube.com/@BurgersMovieBMT" target="_blank">YouTube</a> |
+        <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+    </div>
+</body>
+</html>
